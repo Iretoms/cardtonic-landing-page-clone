@@ -4,6 +4,9 @@ import heroImage from '../Assets/svgs/firstHomeImage.svg'
 import googlePlay from '../Assets/svgs/googleplay.svg'
 import appleStore from "../Assets/svgs/appstore.svg";
 import giftLine from "../Assets/svgs/sellLine.svg"
+import trusted from "../Assets/svgs/trustedIcon.svg"
+import cross from "../Assets/svgs/crossPlatformIcon.svg";
+import bell from "../Assets/svgs/payment.svg"
 
 const Hero = () => {
     return (
@@ -11,11 +14,15 @@ const Hero = () => {
         <Container>
           <HeroText>
             <h1>
-              sell <span>gift cards <img src={giftLine} alt="giftline"/></span> & <br/> earn rewards💰
+              sell{" "}
+              <span>
+                gift cards <img src={giftLine} alt="giftline" />
+              </span>{" "}
+              & <br /> earn rewards💰
             </h1>
             <p>
-              Exchange unused gift cards for cash at<br/> amazing rates in split
-              seconds.
+              Exchange unused gift cards for cash at
+              <br /> amazing rates in split seconds.
             </p>
             <div className="button-container">
               <img src={googlePlay} alt="googleplay" />
@@ -26,11 +33,41 @@ const Hero = () => {
             <img src={heroImage} alt="heroImage" />
           </HeroImage>
         </Container>
+        <Cards>
+          <Card id='colored'>
+            <img src={bell} alt="instant" />
+            <h4>Instant Payment</h4>
+            <p>
+              Using state-of-the-art payment procedures, you are guaranteed to
+              get your payment sent to your account within minutes.
+            </p>
+          </Card>
+          <Card>
+            <img src={cross} alt="instant" />
+            <h4>Cross-Platform Availability</h4>
+            <p>
+              Sell any gift card anywhere, anytime, using our modern gift card 
+              trading application available on Andriod, iOS and web browser.
+            </p>
+          </Card>
+          <Card>
+            <img src={trusted} alt="instant" />
+            <h4>Trusted and Secure</h4>
+            <p>
+              Trade with high confidence, as we assure you the highest level of
+              encryption and professionally audited exchange system.
+            </p>
+          </Card>
+        </Cards>
+        <Button>
+            <button> Register Now</button>
+        </Button>
       </HeroSection>
     );
 };
 
 const HeroSection = styled.section`
+background-color: #fff;
 width: 100%;
 min-height: 100vh;
 padding-top: 2vh;
@@ -98,5 +135,107 @@ img {
     height: 33rem;
 }
 `
+const Cards = styled.div`
+width: 80%;
+margin: 3rem auto 0;
+display: flex;
+justify-content: center;
+gap: 2rem;
+`
+
+const Card = styled.div`
+  width: 14rem;
+  height: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 10px 24px 54px 0px;
+  border-radius: 20px;
+  padding: 1rem;
+  position: relative;
+  transition: all 1s ease;
+  overflow: hidden;
+  h4 {
+    margin-top: 0.8rem;
+    color: #0a2b43;
+    transition: all 0.7s ease;
+  }
+
+  p {
+    color: #79869f;
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+    line-height: 18px;
+  }
+
+  &:hover {
+    background-color: #002444;
+    h4 {
+      color: #fff;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 7rem;
+    height: 7rem;
+    background-color: rgba(240, 240, 240, 0.1);
+    position: absolute;
+    right: 11px;
+    border-radius: 50%;
+    transform: rotate(-45deg) translateX(7rem);
+    transition: transform 1s ease;
+  }
+
+  &::after {
+    content: "";
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(240, 240, 240, 0.2);
+    position: absolute;
+    left: -4rem;
+    bottom: -4rem;
+    border-radius: 50%;
+    transform: rotate(-45deg) translateX(0rem);
+    transition: transform 0.5s ease;
+  }
+
+  &:hover::before {
+    transform: rotate(-45deg) translateX(3rem);
+  }
+
+  &:hover::after {
+    transform: rotate(-45deg) translateX(4rem);
+  }
+
+  &#colored {
+    background-color: #002444;
+    h4 {
+      color: #fff;
+    }
+  }
+
+  &#colored:hover {
+    background-color: #fff;
+    h4 {
+      color: #0a2b43;
+    }
+  }
+`;
+
+const Button = styled.div`
+  width: 80%;
+  margin: 4rem auto ;
+  text-align: center;
+  button {
+    height: 3.5rem;
+    width: 10rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 16px;
+    background-color: #f0f0f0;
+    color: #0a2b43;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+`;
 
 export default Hero;
