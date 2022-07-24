@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Line from "../Assets/svgs/underMark.svg";
-import Carousel from './Carousel';
+
 
 const Offer = () => {
     return (
@@ -39,7 +39,6 @@ const Offer = () => {
             </p>
           </OfferInfo>
         </div>
-        <Carousel/>
       </OfferSection>
     );
 };
