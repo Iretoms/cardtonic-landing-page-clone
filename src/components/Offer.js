@@ -23,7 +23,7 @@ const Offer = () => {
             </p>
             <p>
               Cardtonic also allows users to
-              <span>sell gift cards in Ghana</span> and Nigeria with instant
+              <b> sell gift cards in Ghana</b> and Nigeria with instant
               payment settlement. With this innovative provision, gift cards
               will never go to waste, even when they cannot be used in certain
               areas of the world, they can be sold at the best possible gift
