@@ -35,7 +35,7 @@ const Partner = () => {
     );
 };
 
-const PartnerSection = styled.div`
+const PartnerSection = styled.section`
 width: 100%;
 min-height: 100vh;
 background-color: #eff8ff;

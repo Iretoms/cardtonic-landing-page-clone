@@ -44,7 +44,7 @@ const Offer = () => {
 };
 
 
-const OfferSection = styled.div`
+const OfferSection = styled.section`
 min-height: 100vh;
 background-color: #00cede;
 padding-top: 6rem;

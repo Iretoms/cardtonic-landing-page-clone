@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Partner from '../components/Partner';
 import Download from '../components/Download';
+import News from '../components/News';
 
 const Home = () => {
     return (
@@ -12,7 +13,8 @@ const Home = () => {
          <Hero/>
          <Offer/> 
          <Partner/>
-         <Download/>  
+         <Download/> 
+         <News/> 
         </>
     );
 };

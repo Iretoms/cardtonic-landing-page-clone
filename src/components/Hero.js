@@ -89,7 +89,6 @@ h1 {
     text-transform: capitalize;
     color:#002444;
     font-size: 3.5rem;
-    font-weight: 900;
     span {
         color:#1b507e;
         position: relative;

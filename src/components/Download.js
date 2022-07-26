@@ -42,9 +42,9 @@ const Download = () => {
   );
 };
 
-const DownloadSection = styled.div`
+const DownloadSection = styled.section`
   width: 100%;
-  height: 75vh;
+  min-height: 90vh;
 `;
 
 const Container = styled.div`
@@ -104,11 +104,11 @@ const Button = styled.div`
 `;
 
 const Image = styled.article`
-  text-align: right;
-  img {
-    height: 17rem;
-    width: 22rem;
-  }
+text-align: right;
+img {
+  height: 17rem;
+  vertical-align: bottom;
+}
 `;
 
 export default Download;
