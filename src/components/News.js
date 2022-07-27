@@ -54,7 +54,7 @@ background-color: #f8f8f8;
 const Container = styled.div`
 width: 80%;
 margin: 0 auto;
-padding: 6rem 0 4rem;
+padding: 6rem 0 6rem;
 `
 
 const TheNews = styled.article`

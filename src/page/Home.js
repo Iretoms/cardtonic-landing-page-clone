@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Partner from '../components/Partner';
 import Download from '../components/Download';
 import News from '../components/News';
+import Footer from '../components/Footer';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
          <Partner/>
          <Download/> 
          <News/> 
+         <Footer/>
         </>
     );
 };
