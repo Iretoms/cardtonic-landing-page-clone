@@ -1,9 +1,19 @@
+import { useState } from "react";
 import styled from "styled-components";
-import logo from "../Assets/svgs/cardtonicLogo.svg";
-import { FaAngleDown } from "react-icons/fa";
+import Logo from "../Assets/svgs/cardtonicLogo.svg";
+import { FaAngleDown, FaBars, FaTimes } from "react-icons/fa";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
-  const clickHandler = (e) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const menuClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  
+
+  const dropDownHandler = (e) => {
     e.currentTarget.classList.toggle("show");
   };
 
@@ -11,11 +21,11 @@ const Header = () => {
     <MainHeader>
       <Nav>
         <div className="navlogo">
-          <img src={logo} alt="logo" />
+          <img src={Logo} alt="logo" />
         </div>
         <NavList>
           <li>Upskill</li>
-          <li className="dropdown" onClick={clickHandler}>
+          <li className="dropdown" onClick={dropDownHandler}>
             <div>
               <p>Customers</p>
               <FaAngleDown />
@@ -26,7 +36,7 @@ const Header = () => {
               <li>Contact Us</li>
             </ul>
           </li>
-          <li className="dropdown" onClick={clickHandler}>
+          <li className="dropdown" onClick={dropDownHandler}>
             <div>
               <p>Business</p>
               <FaAngleDown />
@@ -37,7 +47,7 @@ const Header = () => {
               <li>Work With Us</li>
             </ul>
           </li>
-          <li className="dropdown" onClick={clickHandler}>
+          <li className="dropdown" onClick={dropDownHandler}>
             <div className="get-started">
               <p>Get Started</p>
               <FaAngleDown />
@@ -49,6 +59,8 @@ const Header = () => {
             </ul>
           </li>
         </NavList>
+        <button onClick={menuClick}>{isOpen ? <FaTimes/> : <FaBars/>}</button>
+        {isOpen && <MobileNav />}
       </Nav>
     </MainHeader>
   );
@@ -68,6 +80,27 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   z-index: 1;
+  position: relative;
+  button {
+    display: none;
+    height: 3.3rem;
+    width: 3.3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: #cffcff;
+    color: #002444;
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+  }
+
+  @media screen and (max-width: 875px) {
+    button {
+      display: block;
+    }
+  }
+
 `;
 
 const NavList = styled.ul`
@@ -131,6 +164,10 @@ const NavList = styled.ul`
         justify-content: space-between;
       }
     }
+  }
+
+  @media screen and (max-width: 875px) {
+    display: none;
   }
 `;
 
