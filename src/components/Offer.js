@@ -45,51 +45,90 @@ const Offer = () => {
 
 
 const OfferSection = styled.section`
-min-height: 100vh;
-background-color: #00cede;
-padding-top: 6rem;
-div {
+  min-height: 100vh;
+  background-color: #00cede;
+  padding-top: 6rem;
+  div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-height: 25rem;
     width: 80%;
     margin: 0 auto;
-}
-`
+  }
+
+  @media screen and (max-width: 1030px) {
+    div {
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 875px) {
+    div {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+`;
 
 const OfferHead = styled.article`
-width: 21.5rem;
-h1 {
+  width: 21.5rem;
+  h1 {
     font-size: 3.5rem;
     text-transform: capitalize;
     color: #fff;
     span {
-        color: #1b507e;
-        position: relative;
-        img {
-            position: absolute;
-            width: 15rem;
-            height:1rem;
-            bottom: -1rem;
-            left:2rem;
-        }
+      color: #1b507e;
+      position: relative;
+      img {
+        position: absolute;
+        width: 15rem;
+        height: 1rem;
+        bottom: -1rem;
+        left: 2rem;
+      }
     }
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    width: 100%;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      span {
+        img {
+          width: 12rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    h1 {
+      font-size: 2.6rem ;
+    }
+  }
+`;
 
 const OfferLine = styled.article`
-width: 1px;
-height: 11.5rem;
-background-color: #002444;
+  width: 1px;
+  height: 11.5rem;
+  background-color: #002444;
+  @media screen and (max-width: 875px) {
+    display: none;
+  }
 `;
 
 const OfferInfo = styled.article`
-width:24.5rem;
-p {
+  width: 24.5rem;
+  p {
     color: #1b507e;
     margin-bottom: 1.5rem;
-}
+  }
+
+  @media screen and (max-width: 875px) {
+    width: 100%;
+  }
 `;
 
 
