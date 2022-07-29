@@ -76,65 +76,111 @@ const Container = styled.div`
   width: 80%;
   margin: 0 auto;
   color: #fff;
+  padding: 2rem 0;
+
+  @media screen and (max-width: 1030px) {
+      width: 85%;
+  }
 `;
 
 const Content = styled.article`
-display: flex;
-justify-content: space-between;
-align-items: center;
-.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .line {
     width: 1px;
     height: 12.5rem;
     background-color: #333333;
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+    .line {
+      display: none;
+    }
+  }
+`;
 
 const Info = styled.div`
-width: 24rem;
-.logo {
+  width: 24rem;
+  .logo {
     width: 13rem;
-}
-.text {
+  }
+  .text {
     margin-top: 1.5rem;
     font-size: 0.9rem;
-}
-.contact {
+  }
+  .contact {
     font-size: 0.9rem;
     margin: 1rem 0;
-}
-.social {
-color: #00cede;
-margin-bottom: 2rem;
-}
-.buttons {
+  }
+  .social {
+    color: #00cede;
+    margin-bottom: 2rem;
+  }
+  .buttons {
     img {
-        margin-right: 0.5rem;
+      margin-right: 0.5rem;
     }
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    width: 100%;
+    .text {
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid #333333;
+    }
+    .social {
+      display: flex;
+      justify-content: space-between;
+    }
+    .buttons {
+      border-bottom: 2px solid #333333;
+      padding-bottom: 1.5rem;
+      img {
+        width: 9rem;
+      }
+    }
+  }
+`;
 
 const List = styled.div`
-width: 24rem;
-display: flex;
-justify-content: space-between;
-padding-top: 5rem;
-ul {
+  width: 24rem;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5rem;
+  ul {
     li {
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
     }
     .head {
-        font-weight: bold;
+      font-weight: bold;
     }
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 1rem;
+
+    ul {
+      border-bottom: 2px solid #333333;
+      padding: 1.5rem 0;
+    }
+  }
+`;
 
 const Line = styled.article`
-width: 100%;
-height: 1px;
-background-color: #333333;
-margin-top: 5rem;
-`
+  width: 100%;
+  height: 1px;
+  background-color: #333333;
+  margin-top: 5rem;
+
+  @media screen and (max-width: 875px) {
+    display: none;
+  }
+`;
 
 const CopyRight = styled.article`
 text-align: center;

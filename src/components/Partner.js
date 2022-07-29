@@ -48,7 +48,7 @@ const Container = styled.div`
   width: 80%;
   margin: 0 auto;
   @media screen and (max-width: 1030px) {
-    width: 90%;
+    width: 85%;
   }
 `;
 const Become = styled.article`

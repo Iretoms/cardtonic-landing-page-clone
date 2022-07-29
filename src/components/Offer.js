@@ -59,7 +59,7 @@ const OfferSection = styled.section`
 
   @media screen and (max-width: 1030px) {
     div {
-      width: 90%;
+      width: 85%;
     }
   }
 

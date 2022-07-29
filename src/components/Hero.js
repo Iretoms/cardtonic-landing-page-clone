@@ -81,7 +81,7 @@ const Container = styled.div`
   padding-top: 2rem;
 
   @media screen and (max-width: 1030px) {
-    width: 90%;
+    width: 85%;
   }
 
   @media screen and (max-width: 875px) {
@@ -139,9 +139,11 @@ const HeroText = styled.article`
   @media screen and (max-width: 920px) {
     h1 {
       font-size: 3rem;
+      width: 100%;
     }
     p {
       font-size: 1.2rem;
+      width: 100%;
     }
   }
 
@@ -174,7 +176,9 @@ const HeroImage = styled.article`
 
   @media screen and (max-width: 875px) {
     width: 100%;
-    padding-top: 1.5rem;
+    img {
+      height: 22rem;
+    }
   }
 `;
 
