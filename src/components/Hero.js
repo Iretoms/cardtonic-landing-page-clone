@@ -18,7 +18,7 @@ const Hero = () => {
               <span>
                 gift cards <img src={giftLine} alt="giftline" />
               </span>{" "}
-              & <br /> earn rewards💰
+              & earn rewards💰
             </h1>
             <p>
               Exchange unused gift cards for cash at
@@ -70,77 +70,126 @@ const HeroSection = styled.section`
 background-color: #fff;
 width: 100%;
 min-height: 100vh;
-padding-top: 2vh;
+overflow-x: hidden;
 `
 const Container = styled.div`
-width: 80%;
-margin: 0 auto;
-display: flex;
-align-items: center;
-height: 75vh;
-`
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  min-height: 75vh;
+  padding-top: 2rem;
+
+  @media screen and (max-width: 1030px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2rem;
+  }
+`;
 
 const HeroText = styled.article`
-display: flex;
-flex-direction: column;
-width: 50%;
-h1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  h1 {
     position: relative;
     text-transform: capitalize;
-    color:#002444;
+    color: #002444;
     font-size: 3.5rem;
     span {
-        color:#1b507e;
-        position: relative;
-        img {
-            position: absolute;
-            right: 0;
-            bottom: -0.8rem;
-        }
-    }
-
-    &::before {
-        content: '';
-        background-color: #f8f8f8;
-        height: 6.5rem;
-        width: 6.5rem;
-        border-radius: 50%;
-        z-index: -1;
+      color: #1b507e;
+      position: relative;
+      img {
         position: absolute;
-        left: -2.5rem;
-        top:-1.5rem;
+        right: 0;
+        bottom: -0.8rem;
+      }
     }
-}
+    &::before {
+      content: "";
+      background-color: #f8f8f8;
+      height: 6.5rem;
+      width: 6.5rem;
+      border-radius: 50%;
+      z-index: -1;
+      position: absolute;
+      left: -2.5rem;
+      top: -1.5rem;
+    }
+  }
 
-p {
+  p {
     color: #002444;
     font-size: 1.5rem;
     margin: 1.3rem 0;
     font-weight: 200;
-}
+  }
 
-div {
+  div {
     margin-top: 1rem;
     img {
-        margin-right: 0.7rem;
+      margin-right: 0.7rem;
     }
-}
-`
+  }
+
+  @media screen and (max-width: 920px) {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 875px) {
+    width: 90%;
+    img {
+      width: 14rem;
+    }
+    div {
+      img {
+        width: 12rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    h1 {
+      font-size: 2.6rem;
+    }
+  }
+`;
 
 const HeroImage = styled.article`
-width: 50%;
-img {
+  width: 50%;
+  img {
     width: 100%;
     height: 33rem;
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    width: 100%;
+    padding-top: 1.5rem;
+  }
+`;
+
 const Cards = styled.div`
-width: 80%;
-margin: 3rem auto 0;
-display: flex;
-justify-content: center;
-gap: 2rem;
-`
+  width: 80%;
+  margin: 3rem auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 const Card = styled.div`
   width: 14rem;
@@ -216,6 +265,10 @@ const Card = styled.div`
     h4 {
       color: #0a2b43;
     }
+  }
+
+  @media screen and (max-width: 875px) {
+    width: 20rem;
   }
 `;
 

@@ -95,7 +95,7 @@ const Nav = styled.nav`
     right: 0;
   }
 
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 900px) {
     button {
       display: block;
     }
@@ -166,7 +166,7 @@ const NavList = styled.ul`
     }
   }
 
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 900px) {
     display: none;
   }
 `;
