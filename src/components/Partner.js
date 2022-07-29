@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import partnerLine from "../Assets/svgs/sellLine.svg";
 import partnerImage from "../Assets/svgs/partner.svg"
+import mobilePartnerImage from "../Assets/svgs/partnerMobile.svg";
 
 const Partner = () => {
     return (
@@ -24,7 +25,8 @@ const Partner = () => {
             </h1>
           </Become>
           <Image>
-            <img src={partnerImage} alt="partner" />
+            <img src={partnerImage} alt="partner" className='desktop' />
+            <img src={mobilePartnerImage} alt="partner" className="mobile"/>
           </Image>
           <Button>
             <button> Register Now</button>
@@ -39,43 +41,81 @@ const PartnerSection = styled.section`
 width: 100%;
 min-height: 100vh;
 background-color: #eff8ff;
-`
-const Container = styled.div`
-width: 80%;
-margin: 0 auto;
-padding: 5rem 0 2rem;
-`
-const Become = styled.article`
-width: 100%;
 display: flex;
 align-items: center;
-justify-content: space-between;
-p {
-color: #002444;
-width: 21rem;
-}
-.line {
+`
+const Container = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  @media screen and (max-width: 1030px) {
+    width: 90%;
+  }
+`;
+const Become = styled.article`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    color: #002444;
+    width: 21rem;
+  }
+  .line {
     width: 1px;
     height: 6rem;
     background-color: #000;
-}
-h1 {
+  }
+  h1 {
     color: #002444;
     font-size: 3rem;
     width: 25rem;
     span {
-        position: relative;
-        img  {
-            position: absolute;
-            bottom: -1rem;
-            left: -2rem;
-        }
+      position: relative;
+      img {
+        position: absolute;
+        bottom: -1rem;
+        left: -2rem;
+      }
     }
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column-reverse;
+    text-align: center;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      width: 100%;
+      img {
+        width: 14rem;
+      }
+    }
+    p {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    .line {
+      display: none;
+    }
+  }
+`;
 const Image = styled.article`
-text-align: center;
-`
+  text-align: center;
+  .mobile {
+    display: none;
+  }
+  @media screen and (max-width: 875px) {
+    margin-bottom: 1rem;
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+      margin: 0 auto;
+      width: 20rem;
+    }
+  }
+`;
 const Button = styled.div`
   width: 80%;
   margin: 0 auto;
