@@ -44,13 +44,16 @@ const Download = () => {
 
 const DownloadSection = styled.section`
   width: 100%;
-  min-height: 90vh;
+  height: 70vh;
 `;
 
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
   padding: 4rem 0 0;
+  @media screen and (max-width: 1030px) {
+    width: 90%;
+  }
 `;
 
 const Register = styled.article`
@@ -87,7 +90,30 @@ const Register = styled.article`
       margin-right: 0.4rem;
     }
   }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column;
+    h1 {
+      width: 100%;
+      font-size: 2.5rem;
+      span {
+        img {
+          width: 12rem;
+        }
+      }
+    }
+    p {
+      width: 100%;
+    }
+    .line {
+      display: none;
+    }
+    .button-container {
+      width: 15rem;
+    }
+  }
 `;
+
 const Button = styled.div`
   button {
     height: 3.5rem;
@@ -100,6 +126,9 @@ const Button = styled.div`
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+  }
+  @media screen and (max-width: 875px) {
+    display: none;
   }
 `;
 
