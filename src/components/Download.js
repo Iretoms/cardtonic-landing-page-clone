@@ -45,6 +45,7 @@ const Download = () => {
 const DownloadSection = styled.section`
   width: 100%;
   height: 70vh;
+  overflow: hidden;
 `;
 
 const Container = styled.div`

@@ -52,46 +52,73 @@ background-color: #f8f8f8;
 `
 
 const Container = styled.div`
-width: 80%;
-margin: 0 auto;
-padding: 6rem 0 6rem;
-`
+  width: 80%;
+  margin: 0 auto;
+  padding: 6rem 0 6rem;
+
+  @media screen and (max-width: 1030px) {
+      width: 90%;
+  }
+`;
 
 const TheNews = styled.article`
-display: flex;
-justify-content: space-between;
-align-items: center;
-p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
     width: 24rem;
     color: #1b507e;
-}
-.line {
+  }
+  .line {
     width: 1px;
     height: 6rem;
     background-color: #000;
-}
-h1 {
+  }
+  h1 {
     width: 24rem;
     font-size: 3.5rem;
     color: #1b507e;
     span {
-        position: relative;
-        img {
-            width: 16rem;
-            position: absolute;
-            left: 0;
-            bottom: -0.8rem;
-        }
+      position: relative;
+      img {
+        width: 16rem;
+        position: absolute;
+        left: 0;
+        bottom: -0.8rem;
+      }
     }
-}
-`
+  }
+
+  @media screen and (max-width: 875px) {
+    flex-direction: column-reverse;
+    p {
+      width: 100%;
+    }
+    .line {
+      display: none;
+    }
+    h1 {
+      width: 100%;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      span {
+        img {
+          width: 13rem;
+        }
+      }
+    }
+  }
+`;
 
 const Platforms = styled.article`
 margin: 7rem 0 3rem;
 display: flex;
+flex-wrap: wrap;
 justify-content: space-between;
 align-items: center;
 img {
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
     transform: scale(1);
     transition: transform 0.5s ease;
     &:hover {
