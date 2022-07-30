@@ -6,6 +6,7 @@ import Partner from '../components/Partner';
 import Download from '../components/Download';
 import News from '../components/News';
 import Footer from '../components/Footer';
+import Intercom from '../components/Intercom';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
          <Download/> 
          <News/> 
          <Footer/>
+         <Intercom/>
         </>
     );
 };

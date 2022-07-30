@@ -6,10 +6,31 @@ import MobileNav from "./MobileNav";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openOne, setOpenOne] = useState(false)
+  const [openTwo, setOpenTwo] = useState(false);
+  const [openThree, setOpenThree] = useState(false);
 
   const menuClick = () => {
     setIsOpen(!isOpen);
   };
+
+  const customerHandler = () => {
+    setOpenOne(!openOne)
+    setOpenTwo(false)
+    setOpenThree(false)
+  }
+
+   const businessHandler = () => {
+     setOpenOne(false);
+     setOpenTwo(!openTwo);
+     setOpenThree(false);
+   };
+
+    const getStartedHandler = () => {
+      setOpenOne(false);
+      setOpenTwo(false);
+      setOpenThree(!openThree);
+    };
 
   
 
@@ -25,7 +46,10 @@ const Header = () => {
         </div>
         <NavList>
           <li>Upskill</li>
-          <li className="dropdown" onClick={dropDownHandler}>
+          <li
+            className={openOne ? "dropdown show" : "dropdown"}
+            onClick={customerHandler}
+          >
             <div>
               <p>Customers</p>
               <FaAngleDown />
@@ -36,7 +60,10 @@ const Header = () => {
               <li>Contact Us</li>
             </ul>
           </li>
-          <li className="dropdown" onClick={dropDownHandler}>
+          <li
+            className={openTwo ? "dropdown show" : "dropdown"}
+            onClick={businessHandler}
+          >
             <div>
               <p>Business</p>
               <FaAngleDown />
@@ -47,7 +74,10 @@ const Header = () => {
               <li>Work With Us</li>
             </ul>
           </li>
-          <li className="dropdown" onClick={dropDownHandler}>
+          <li
+            className={openThree ? "dropdown show" : "dropdown"}
+            onClick={getStartedHandler}
+          >
             <div className="get-started">
               <p>Get Started</p>
               <FaAngleDown />
@@ -59,7 +89,7 @@ const Header = () => {
             </ul>
           </li>
         </NavList>
-        <button onClick={menuClick}>{isOpen ? <FaTimes/> : <FaBars/>}</button>
+        <button onClick={menuClick}>{isOpen ? <FaTimes /> : <FaBars />}</button>
         {isOpen && <MobileNav />}
       </Nav>
     </MainHeader>
