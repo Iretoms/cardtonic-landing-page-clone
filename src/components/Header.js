@@ -90,7 +90,7 @@ const Header = () => {
           </li>
         </NavList>
         <button onClick={menuClick}>{isOpen ? <FaTimes /> : <FaBars />}</button>
-        {isOpen && <MobileNav />}
+        {/* {isOpen && <MobileNav />} */}
       </Nav>
     </MainHeader>
   );

@@ -40,7 +40,7 @@ const IntercomSec = styled.div`
   bottom: 1rem;
   animation: ${intercomAnimate} 0.5s ease-in;
   cursor: pointer;
-  box-shadow: 0 1px 6px 0 rgb(0 ,0 ,0,0.6), 0 2px 32px 0 rgb(0, 0 ,0,0.16);
+  box-shadow: 0 2px 32px 0 rgb(0, 0 ,0,0.16);
   z-index: 1000;
 `;
 
