@@ -2,11 +2,12 @@ import { useState } from "react";
 import styled from "styled-components";
 import Logo from "../Assets/svgs/cardtonicLogo.svg";
 import { FaAngleDown, FaBars, FaTimes } from "react-icons/fa";
+import { AnimatePresence } from "framer-motion";
 import MobileNav from "./MobileNav";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [openOne, setOpenOne] = useState(false)
+  const [openOne, setOpenOne] = useState(false);
   const [openTwo, setOpenTwo] = useState(false);
   const [openThree, setOpenThree] = useState(false);
 
@@ -15,27 +16,21 @@ const Header = () => {
   };
 
   const customerHandler = () => {
-    setOpenOne(!openOne)
-    setOpenTwo(false)
-    setOpenThree(false)
-  }
+    setOpenOne(!openOne);
+    setOpenTwo(false);
+    setOpenThree(false);
+  };
 
-   const businessHandler = () => {
-     setOpenOne(false);
-     setOpenTwo(!openTwo);
-     setOpenThree(false);
-   };
+  const businessHandler = () => {
+    setOpenOne(false);
+    setOpenTwo(!openTwo);
+    setOpenThree(false);
+  };
 
-    const getStartedHandler = () => {
-      setOpenOne(false);
-      setOpenTwo(false);
-      setOpenThree(!openThree);
-    };
-
-  
-
-  const dropDownHandler = (e) => {
-    e.currentTarget.classList.toggle("show");
+  const getStartedHandler = () => {
+    setOpenOne(false);
+    setOpenTwo(false);
+    setOpenThree(!openThree);
   };
 
   return (
@@ -90,7 +85,7 @@ const Header = () => {
           </li>
         </NavList>
         <button onClick={menuClick}>{isOpen ? <FaTimes /> : <FaBars />}</button>
-        {/* {isOpen && <MobileNav />} */}
+        <AnimatePresence>{isOpen && <MobileNav />}</AnimatePresence>
       </Nav>
     </MainHeader>
   );
@@ -123,6 +118,7 @@ const Nav = styled.nav`
     cursor: pointer;
     position: absolute;
     right: 0;
+    z-index: 50;
   }
 
   @media screen and (max-width: 900px) {
@@ -130,7 +126,6 @@ const Nav = styled.nav`
       display: block;
     }
   }
-
 `;
 
 const NavList = styled.ul`
