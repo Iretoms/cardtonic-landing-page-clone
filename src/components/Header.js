@@ -15,6 +15,10 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  isOpen
+    ? document.body.classList.add("fixed")
+    : document.body.classList.remove("fixed");
+
   const customerHandler = () => {
     setOpenOne(!openOne);
     setOpenTwo(false);

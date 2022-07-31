@@ -11,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
 body {
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
+    &.fixed {
+        position: fixed;
+    }
 }
 
 ul {
